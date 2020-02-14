@@ -1,0 +1,23 @@
+{% extends "model.html" %}
+
+{% block conteudo %}
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/produtos">Produtos</a></li>
+</ul>
+
+    <h1>Smartwatch</h1>
+<div class="principal">
+    {% for id, nome in produtos.items() %}
+    <div class="content">
+        <div class="nomeProduto"> {{nome}} </div>
+        <div class="imgProduto">
+            <img src="/static/img/{{imagens[id]}}" >
+        </div>
+        <div class="linkProduto">
+            <a href="/detalhes/?id={{id}}">Detalhes</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock conteudo %}
